@@ -30,16 +30,16 @@ test_labels = mnist.test_labels()  # 測試標籤
 ## 對數據進行相應的處理，將圖片數據歸一化，同時向量化
 
 ```python
-# 规范化图片   规范化像素值[0,255]
-# 为了使神经网络更好的训练，我们把值设置为[-0.5 , 0.5]
+# 規範化圖片 規範化像素值[0,255]
+# 為了讓神經網路更好的訓練，我們把數值設定為[-0.5 , 0.5]
 train_images = (train_images/255) - 0.5
 test_images = (test_images/255) - 0.5
-# 将 28 * 28 像素图片展成 28 * 28 = 784 维向量
+# 將 28 * 28 像素圖片展成 28 * 28 = 784 維向量
 train_images = train_images.reshape((-1,784))
 test_images = test_images.reshape((-1,784))
-#打印出来
-print(train_images.shape) # 6000个训练数据
-print(test_images.shape) # 1000个测试数据
+#列印出來
+print(train_images.shape) # 6000個訓練數據
+print(test_images.shape) # 1000個測試數據
 ```
 ## 建立神經網絡模型
 
