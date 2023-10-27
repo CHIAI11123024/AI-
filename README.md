@@ -145,3 +145,6 @@ im2arr = im2arr.reshape(1,784)
 y_pred = model.predict(im2arr)
 print(np.argmax(y_pred, axis = 1))
 ```
+
+## 參考文章
+https://blog.csdn.net/weixin_43843172/article/details/109897787
