@@ -119,7 +119,7 @@ for i in range(0,5):
 ## 識別自己的手寫體
 
 首先需要建立連結：
-因為catlab 的文件在雲端中，我們需要它和google drives 進行綁定
+因為colab 的文件在雲端中，我們需要它和google drives 進行綁定
 
 ```python
 import os
