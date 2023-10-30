@@ -6,8 +6,8 @@
 
 ```python
 !pip install tensorflow keras numpy mnist matplotlib
-#導入數據包
-mport numpy as np
+ # 导入数据包
+import numpy as np
 import mnist  # 获得数据集
 import matplotlib.pyplot as plt  # Graph
 from keras.models import Sequential  # ANN 网络结构
@@ -60,26 +60,30 @@ print(model.summary())
 ## 進行模型的編譯和訓練
 
 ```python
-# 編譯模型 
-# 損失函數衡量模型在訓練中的表現 然後進行優化
+# 编译模型
+# 损失函数衡量模型在训练中的表现 然后进行优化
 model.compile(
     optimizer = 'adam',
     loss = "categorical_crossentropy",
     metrics = ["accuracy"]
 )
-# 訓練模型
-from keras.utils.np_utils import to_categorical
+# 训练模型
+#from keras.utils.np_utils import to_categorical
+from tensorflow.keras import utils
+
 history=model.fit(
     train_images,
-    to_categorical(train_labels),
-    epochs = 5,  #要訓​​練的整個數據集的疊代次數
-    batch_size = 32  #每個梯度更新的樣本數以進行訓練
+    #to_categorical(train_labels),
+    utils.to_categorical(train_labels),
+    epochs = 5,  #要训​​练的整个数据集的迭代次数
+    batch_size = 32  #每个梯度更新的样本数以进行训练
 
 )
 
 print(history.history.keys())
 # print(plt.plot(history.history['loss']))
 print(plt.plot(history.history['accuracy']))
+
 ```
 
 ## 評估模型
@@ -134,15 +138,15 @@ os.listdir(path)
 之後進行模型預測
 
 ```python
-rom PIL import Image
+from PIL import Image
 import numpy as np
 import os
+img = Image.open("/drive/test.png").convert("1")
 
-img = Image.open("test.jpg").convert("1")
-img = np.resize(img, (28,28,1))
+img = np. resize (img, (28,28,1))
 im2arr = np.array(img)
-im2arr = im2arr.reshape(1,784)
-y_pred = model.predict(im2arr)
+im2arr = im2arr.reshape (1,784)
+y_pred = model.predict (im2arr)
 print(np.argmax(y_pred, axis = 1))
 ```
 
