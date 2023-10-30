@@ -5,7 +5,7 @@
 ## 導入相關的包
 
 ```python
-! pip install tensorflow keras numpy mnist matplotlib
+!pip install tensorflow keras numpy mnist matplotlib
  # 导入数据包
 import numpy as np
 import mnist  # 获得数据集
