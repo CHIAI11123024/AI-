@@ -141,7 +141,7 @@ os.listdir(path)
 from PIL import Image
 import numpy as np
 import os
-img = Image.open("/drive/test.png").convert("1")
+img = Image.open("/content/drive/My Drive/data/test.png").convert("1")
 
 img = np. resize (img, (28,28,1))
 im2arr = np.array(img)
